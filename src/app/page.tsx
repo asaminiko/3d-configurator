@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic'
 import { useConfiguratorStore } from '../store/useConfiguratorStore'
 import { useEffect } from 'react'
+import ConfiguratorUI from '../components/ConfiguratorUI'
 
 const Scene = dynamic(() => import('@/src/components/Scene'), {
   ssr: false,
@@ -25,7 +26,7 @@ export default function Home() {
       <div className='absolute inset-0 z-0'>
         <Scene />
       </div>
-      <div className='relative z-10 pointer-events-none w-full h-full'></div>
+      <ConfiguratorUI />
     </main>
   )
 }
